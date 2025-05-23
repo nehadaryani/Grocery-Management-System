@@ -50,7 +50,7 @@ var productModal = $("#productModal");
         var data = {
             product_id : tr.data('id')
         };
-        var isDelete = confirm("Are you sure to delete "+ tr.data('name') +" item?");
+        var isDelete = confirm("Are you sure to delete "+ tr.data('name') +" Product?");
         if (isDelete) {
             callApi("POST", productDeleteApiUrl, data);
         }
@@ -66,7 +66,7 @@ var productModal = $("#productModal");
         //JSON data by API call
         $.get(uomListApiUrl, function (response) {
             if(response) {
-                var options = '<option value="">--Select--</option>';
+                var options = '<option value="">-- Select(kg or each) --</option>';
                 $.each(response, function(index, uom) {
                     options += '<option value="'+ uom.uom_id +'">'+ uom.uom_name +'</option>';
                 });
